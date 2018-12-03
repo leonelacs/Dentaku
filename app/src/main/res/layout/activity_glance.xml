@@ -159,7 +159,7 @@
             <Button
                 android:id="@+id/BPow"
                 android:text="∧"
-                android:textSize="22dp"
+                android:textSize="20dp"
                 android:textAllCaps="false"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
