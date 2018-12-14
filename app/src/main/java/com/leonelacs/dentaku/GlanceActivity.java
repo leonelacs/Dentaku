@@ -15,32 +15,262 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
+import com.leonelacs.calcium.*;
 
 public class GlanceActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+
+    protected String newExpDisp = "", newResDisp = "";
+    String div0 = "Divide by 0";
+    String unke = "Unknown Error";
+    String syne = "Syntax Error";
+    String dome = "Domain Error";
+
+    protected void RefreshResult() {
+        TextView tvExpression = (TextView)findViewById(R.id.InputDisplay);
+        TextView tvResult = (TextView)findViewById(R.id.ResultDisplay);
+        String expression = tvExpression.getText().toString().trim();
+
+        if (!expression.equals("")) {
+            Calc calc = new Calc();
+            String result = calc.StrCompute(expression);
+            //tvExpression.setText(result);
+            if (result.equals(div0) || result.equals(unke) || result.equals(syne) || result.equals(dome)) {
+
+            }
+            else {
+                tvResult.setText(result);
+            }
+        }
+    }
+
+    protected void RefreshTextSize() {
+        TextView tvExpression = (TextView)findViewById(R.id.InputDisplay);
+        TextView tvResult = (TextView)findViewById(R.id.ResultDisplay);
+        String exps = tvExpression.getText().toString();
+        String ress = tvResult.getText().toString();
+        int expcnt = exps.length();
+        int rescnt = ress.length();
+        if (expcnt > 12) tvExpression.setTextSize(48 * 2 / 3);
+        else tvExpression.setTextSize(48);
+        if (rescnt > 14) tvResult.setTextSize(42 * 2 / 3);
+        else tvResult.setTextSize(42);
+    }
 
     @Override
 
     public void onClick(View view) {
         TextView tvExpression = (TextView)findViewById(R.id.InputDisplay);
         TextView tvResult = (TextView)findViewById(R.id.ResultDisplay);
+
         switch ((int)view.getTag()) {
             case 0:
-                tvExpression.setText(tvExpression.getText()+"0");
+                newExpDisp = tvExpression.getText()+"0";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
                 break;
             case 1:
-                tvExpression.setText(tvExpression.getText()+"1");
+                newExpDisp = tvExpression.getText()+"1";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
                 break;
             case 2:
-                tvExpression.setText(tvExpression.getText()+"2");
+                newExpDisp = tvExpression.getText()+"2";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
+                break;
+            case 3:
+                newExpDisp = tvExpression.getText()+"3";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
+                break;
+            case 4:
+                newExpDisp = tvExpression.getText()+"4";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
+                break;
+            case 5:
+                newExpDisp = tvExpression.getText()+"5";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
+                break;
+            case 6:
+                newExpDisp = tvExpression.getText()+"6";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
+                break;
+            case 7:
+                newExpDisp = tvExpression.getText()+"7";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
+                break;
+            case 8:
+                newExpDisp = tvExpression.getText()+"8";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
+                break;
+            case 9:
+                newExpDisp = tvExpression.getText()+"9";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
+                break;
+            case 10:
+                newExpDisp = tvExpression.getText()+".";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 11:    //==================================================
+                String expression = tvExpression.getText().toString().trim();
+                if (!expression.equals("")) {
+                    Calc calc = new Calc();
+                    String result = calc.StrCompute(expression);
+                    tvResult.setText("");
+                    tvExpression.setText(result);
+                }
+                RefreshTextSize();
+                break;
+            case 12:
+                newExpDisp = tvExpression.getText()+"+";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 13:
+                newExpDisp = tvExpression.getText()+"-";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 14:
+                //tvExpression.setText(tvExpression.getText()+"×");
+                newExpDisp = tvExpression.getText()+"×";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 15:
+                //tvExpression.setText(tvExpression.getText()+"÷");
+                newExpDisp = tvExpression.getText()+"÷";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 16:    //del
+                String newExp = tvExpression.getText().toString();
+                newExp = newExp.trim();
+                if (!newExp.equals("")) {
+                    if (newExp.equals(div0) || newExp.equals(unke) || newExp.equals(syne) || newExp.equals(dome)) {
+                        newExp = "";
+                        tvExpression.setText(newExp);
+                    }
+                    else {
+                        newExp = newExp.substring(0, newExp.length() - 1);
+                        tvExpression.setText(newExp);
+                    }
+                    if (newExp.equals("")) {
+                        tvResult.setText("");
+                    }
+                }
+                else {
+                    tvResult.setText("");
+                }
+                RefreshResult();
+                RefreshTextSize();
+                break;
+            case 17:
+                newExpDisp = tvExpression.getText()+"sin(";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 18:
+                newExpDisp = tvExpression.getText()+"cos(";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 19:
+                newExpDisp = tvExpression.getText()+"tan(";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 20:
+                newExpDisp = tvExpression.getText()+"arcsin(";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 21:
+                newExpDisp = tvExpression.getText()+"arccos(";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 22:
+                newExpDisp = tvExpression.getText()+"arctan(";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 23:
+                newExpDisp = tvExpression.getText()+"ln(";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 24:
+                newExpDisp = tvExpression.getText()+"log(";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 25:
+                //tvExpression.setText(tvExpression.getText()+"√");
+                newExpDisp = tvExpression.getText()+"√(";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 26:
+                //tvExpression.setText(tvExpression.getText()+"π");
+                newExpDisp = tvExpression.getText()+"π";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
+                break;
+            case 27:
+                newExpDisp = tvExpression.getText()+"e";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
+                break;
+            case 28:
+                newExpDisp = tvExpression.getText()+"^";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 29:
+                newExpDisp = tvExpression.getText()+"(";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 30:
+                newExpDisp = tvExpression.getText()+")";
+                tvExpression.setText(newExpDisp);
+                RefreshTextSize();
+                break;
+            case 31:
+                newExpDisp = tvExpression.getText()+"!";
+                tvExpression.setText(newExpDisp);
+                RefreshResult();
+                RefreshTextSize();
+                break;
         }
     }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glance);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
         Button bt0 = (Button)findViewById(R.id.B0);
         Button bt1 = (Button)findViewById(R.id.B1);
@@ -76,8 +306,6 @@ public class GlanceActivity extends AppCompatActivity
         Button btFact = (Button)findViewById(R.id.BFact);
         Button btLeftBracket = (Button)findViewById(R.id.BLeft);
         Button btRightBracket = (Button)findViewById(R.id.BRight);
-
-
 
         bt0.setTag(0);
         bt1.setTag(1);
@@ -133,6 +361,18 @@ public class GlanceActivity extends AppCompatActivity
         btDivide.setOnClickListener(this);
         btDelete.setOnClickListener(this);
 
+        final TextView tvExpression = (TextView)findViewById(R.id.InputDisplay);
+        final TextView tvResult = (TextView)findViewById(R.id.ResultDisplay);
+
+        btDelete.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                tvExpression.setText("");
+                tvResult.setText("");
+                return false;
+            }
+        });
+
         btSin.setOnClickListener(this);
         btCos.setOnClickListener(this);
         btTan.setOnClickListener(this);
@@ -152,12 +392,13 @@ public class GlanceActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override

@@ -9,19 +9,20 @@
     tools:openDrawer="start"
     android:layout_weight="100">
 
-    <include
-        layout="@layout/app_bar_glance"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <!--<include-->
+        <!--layout="@layout/app_bar_glance"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+    <include layout="@layout/content_glance" />
 
-    <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_glance"
-        app:menu="@menu/activity_glance_drawer" />
+    <!--<android.support.design.widget.NavigationView-->
+        <!--android:id="@+id/nav_view"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="start"-->
+        <!--android:fitsSystemWindows="true"-->
+        <!--app:headerLayout="@layout/nav_header_glance"-->
+        <!--app:menu="@menu/activity_glance_drawer" />-->
 
     <!--<android.support.design.widget.NavigationView-->
         <!--android:id="@+id/SpecialSymbol"-->
@@ -38,6 +39,7 @@
         android:layout_weight="100"
         android:layout_gravity="end"
         android:orientation="vertical"
+
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,151 +51,202 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="12"
+            android:background="#0f2540"
+
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/BSin"
-                android:text="sin"
-                android:textSize="20dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="sin"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="20dp" />
+
             <Button
                 android:id="@+id/BCos"
-                android:text="cos"
-                android:textSize="20dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="cos"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="20dp" />
+
             <Button
                 android:id="@+id/BTan"
-                android:text="tan"
-                android:textSize="20dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="tan"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="20dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="12"
+            android:background="#0f2540"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/BAsin"
-                android:text="sin⁻¹"
-                android:textSize="18dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="sin⁻¹"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="18dp" />
+
             <Button
                 android:id="@+id/BAcos"
-                android:text="cos⁻¹"
-                android:textSize="18dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="cos⁻¹"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="18dp" />
+
             <Button
                 android:id="@+id/BAtan"
-                android:text="tan⁻¹"
-                android:textSize="18dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="tan⁻¹"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="18dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="12"
+            android:background="#0f2540"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/BLn"
-                android:text="ln"
-                android:textSize="22dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="ln"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="22dp" />
+
             <Button
                 android:id="@+id/BLog"
-                android:text="log"
-                android:textSize="22dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="log"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="22dp" />
+
             <Button
                 android:id="@+id/BSqrt"
-                android:text="√"
-                android:textSize="24dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="√"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="24dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="12"
+            android:background="#0f2540"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/BPi"
-                android:text="π"
-                android:textSize="24dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="π"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="24dp" />
+
             <Button
                 android:id="@+id/Be"
-                android:text="e"
-                android:textSize="24dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="e"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="24dp" />
+
             <Button
                 android:id="@+id/BPow"
-                android:text="∧"
-                android:textSize="20dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="∧"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="20dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="12"
+            android:background="#0f2540"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/BLeft"
-                android:text="("
-                android:textSize="24dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="("
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="24dp" />
+
             <Button
                 android:id="@+id/BRight"
-                android:text=")"
-                android:textSize="24dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text=")"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="24dp" />
+
             <Button
                 android:id="@+id/BFact"
-                android:text="!"
-                android:textSize="24dp"
-                android:textAllCaps="false"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"/>
+                android:layout_weight="4"
+                android:text="!"
+                android:textAllCaps="false"
+                android:textColor="#2ea9df"
+                android:textSize="24dp" />
         </LinearLayout>
     </LinearLayout>
 
