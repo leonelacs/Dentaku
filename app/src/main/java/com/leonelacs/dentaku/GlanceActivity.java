@@ -1,19 +1,15 @@
 package com.leonelacs.dentaku;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.Switch;
 import android.widget.TextView;
 import com.leonelacs.calcium.*;
 
@@ -129,7 +125,7 @@ public class GlanceActivity extends AppCompatActivity
                 tvExpression.setText(newExpDisp);
                 RefreshTextSize();
                 break;
-            case 11:    //==================================================
+            case 11:
                 String expression = tvExpression.getText().toString().trim();
                 if (!expression.equals("")) {
                     Calc calc = new Calc();
@@ -224,13 +220,11 @@ public class GlanceActivity extends AppCompatActivity
                 RefreshTextSize();
                 break;
             case 25:
-                //tvExpression.setText(tvExpression.getText()+"√");
                 newExpDisp = tvExpression.getText()+"√(";
                 tvExpression.setText(newExpDisp);
                 RefreshTextSize();
                 break;
             case 26:
-                //tvExpression.setText(tvExpression.getText()+"π");
                 newExpDisp = tvExpression.getText()+"π";
                 tvExpression.setText(newExpDisp);
                 RefreshResult();
@@ -269,8 +263,6 @@ public class GlanceActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glance);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
         Button bt0 = (Button)findViewById(R.id.B0);
         Button bt1 = (Button)findViewById(R.id.B1);
@@ -396,9 +388,6 @@ public class GlanceActivity extends AppCompatActivity
         this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-//        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override

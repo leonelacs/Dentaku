@@ -6,7 +6,6 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-import java.util.regex.Pattern;
 
 public class Calc {
     public static List<MathOperator> mathOperators = new ArrayList<MathOperator>();
@@ -72,7 +71,6 @@ public class Calc {
         if (!bracketgood) {
             return "b";
         }
-        exp = exp.replaceAll("(\\-?\\d+)(\\.\\d+)?(E)(\\-?\\d+)", new BigDecimal("$0").toPlainString());
         exp = exp.replaceAll("×", "*");
         exp = exp.replaceAll("÷", "/");
         exp = exp.replaceAll("\\{-", "{~");
@@ -90,7 +88,6 @@ public class Calc {
         exp = exp.replaceAll("√\\(", "q");
         exp = exp.replaceAll("π", "3.14159");
         exp = exp.replaceAll("e", "2.71828");
-        //exp = exp.replaceAll("\\)\\(", ")*(");
         exp = MultiplyComplete(exp);
         return exp;
     }
@@ -158,12 +155,6 @@ public class Calc {
         return numbers;
     }
 
-    public boolean FormatedExpressionVaildate(String expf) {
-        List<String> patList = new ArrayList<String>();
-
-        return true;
-    }
-
     public DecimalAnswer FormatedExpressionCalculate(String expf) {
         if (expf.equals("b")) {
             DecimalAnswer ans = new DecimalAnswer(null, "SYNEb");
@@ -192,35 +183,13 @@ public class Calc {
                             if (c == '!') {
                                 BigDecimal opnd = numbers.pop();
                                 BigInteger ndint;
-//                                long posinega;
-//                                long ndlong;
                                 try {
                                     ndint = opnd.toBigIntegerExact();
-//                                    ndlong = ndint.longValue();
-//                                    BigInteger big_0 = new BigInteger("0");
-//                                    BigInteger big_49 = new BigInteger("49");
-//                                    if (ndlong < 0) {
-//                                        posinega = -1;
-//                                    }
-//                                    else {
-//                                        posinega = 1;
-//                                    }
-//                                    if (ndlong > 49 || ndlong < -49) {
-//                                        DecimalAnswer ans = new DecimalAnswer(null, "SOFE");
-//                                        return ans;
-//                                    }
                                 } catch (Exception e) {
                                     DecimalAnswer ans = new DecimalAnswer(null, "DOME");
                                     return ans;
                                 }
-//                                long res = 1;
-//                                for (long i = ndint.longValue() * posinega; i >= 2; i--) {
-//                                    res *= i;
-//                                }
-//                                res *= posinega;
-                                //////////
                                 BigInteger bigres = BigFactorial(ndint);
-                                //////////
                                 numbers.push(new BigDecimal(bigres));
                                 break;
                             }
